@@ -1,5 +1,6 @@
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
+import Link from 'next/link'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -79,9 +80,9 @@ ON CONFLICT (id) DO UPDATE SET role = 'owner', must_change_password = false;`}
           <div className="p-6 bg-[var(--surface)] border border-[var(--surface-border)] rounded-xl">
             <h2 className="text-xl font-bold mb-4">Module Upload</h2>
             <p className="text-sm text-[var(--muted)] mb-4">Ajouter de nouvelles vidéos à la plateforme.</p>
-            <button className="w-full py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
+            <Link href="/admin/upload" className="block w-full text-center py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
               Gérer
-            </button>
+            </Link>
           </div>
         )}
 
@@ -90,9 +91,9 @@ ON CONFLICT (id) DO UPDATE SET role = 'owner', must_change_password = false;`}
           <div className="p-6 bg-[var(--surface)] border border-[var(--surface-border)] rounded-xl">
             <h2 className="text-xl font-bold mb-4">Module Gestion</h2>
             <p className="text-sm text-[var(--muted)] mb-4">Gérer les chaînes, tags, et la page d&apos;accueil.</p>
-            <button className="w-full py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
+            <Link href="/admin/gestion" className="block w-full text-center py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
               Gérer
-            </button>
+            </Link>
           </div>
         )}
 
@@ -101,9 +102,9 @@ ON CONFLICT (id) DO UPDATE SET role = 'owner', must_change_password = false;`}
           <div className="p-6 bg-[var(--surface)] border border-[var(--surface-border)] rounded-xl">
             <h2 className="text-xl font-bold mb-4">Module Modération</h2>
             <p className="text-sm text-[var(--muted)] mb-4">Traiter les signalements et réclamations.</p>
-            <button className="w-full py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
+            <Link href="/admin/moderation" className="block w-full text-center py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
               Gérer
-            </button>
+            </Link>
           </div>
         )}
 
@@ -112,9 +113,9 @@ ON CONFLICT (id) DO UPDATE SET role = 'owner', must_change_password = false;`}
           <div className="p-6 bg-[var(--surface)] border border-[var(--surface-border)] rounded-xl">
             <h2 className="text-xl font-bold mb-4">Module Équipe</h2>
             <p className="text-sm text-[var(--muted)] mb-4">Gérer les accès et créer de nouveaux comptes staff.</p>
-            <button className="w-full py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
+            <Link href="/admin/team" className="block w-full text-center py-2 bg-white/10 hover:bg-white/20 rounded font-medium transition-colors">
               Gérer
-            </button>
+            </Link>
           </div>
         )}
       </div>
